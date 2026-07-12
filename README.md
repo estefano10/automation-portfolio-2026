@@ -25,4 +25,4 @@ ai-quality-suite (LLM evals).
 Python, Playwright, pytest, requests + pydantic, PostgreSQL, GitHub Actions, Docker, promptfoo + DeepEval.
 
 ## Progress
-Module 0: in progress
+Module 0: COMPLETED ✅
