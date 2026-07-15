@@ -4,6 +4,3 @@ def reverse(text):
 x = reverse("stressed")
 y = reverse("strops")
 z = reverse("racecar")
-print(x)
-print(y)
-print(z)

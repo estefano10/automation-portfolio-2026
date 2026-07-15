@@ -17,6 +17,7 @@ print(letras[::2])
 # ['a', 'c', 'e']
 
 # LECCIÓN: el slice tiene tres ranuras [start:stop:step]
+# El signo del step es la dirección, el número es el salto
 
 # --- Snippet 2 ---
 # PREDIGO:
@@ -53,7 +54,7 @@ print(config.get("timeout", 30))
 # 30
 
 
-# LECCIÓN: el primero da false porque porqie in en un diccionario busca claves, no valores ( a menos que lo especifiquemos). En cuanto al get, como no encuentra timeout devuelve 30 que es el default
+# LECCIÓN: el primero da false porque porque in en un diccionario busca claves, no valores ( a menos que lo especifiquemos). En cuanto al get, como no encuentra timeout devuelve 30 que es el default
 
 # --- Snippet 4 ---
 # PREDIGO:
@@ -82,8 +83,8 @@ print(punto)
 # REAL:
 
 # TypeError: 'tuple' object does not support item assignment
+
+# LECCIÓN: no podemos modificar una tupla, son inmutables.
 # Las tuples son secuencias (igual que strings y listas): indexables, sliceables, iterables. Lo único que no soportan es item assignment
-
-
-# LECCIÓN: no podemos modificar una tupla, son inmutables
+# Immutable = read-only, NO "sin índice"
 
