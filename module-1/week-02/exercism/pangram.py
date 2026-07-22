@@ -6,7 +6,4 @@ def is_pangram(sentence):
     stnc = set(tolower)
     
 
-    return alphabet <= stnc  
-     
-    
-is_pangram("The quick brown fox jumps over the lazy dog")
+    return alphabet <= stnc 
