@@ -8,4 +8,4 @@ class Booking:
         self.is_confirmed = False
 
     def __repr__(self):
-        return f"Booking(member={self.member!r}, session={self.session}, is_confirmed={self.is_confirmed})"
+        return f"Booking(member={self.member!r}, session={self.session!r}, is_confirmed={self.is_confirmed})"
