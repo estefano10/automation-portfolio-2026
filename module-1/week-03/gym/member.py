@@ -11,4 +11,3 @@ class Member:
 
     def __repr__(self):
         return f"Member(name={self.name!r}, plan={self.plan!r}, active={self.is_active})"
-    
