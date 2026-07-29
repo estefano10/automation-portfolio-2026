@@ -1,17 +1,25 @@
+import pytest
 from member import Member
 
-def test_new_member_starts_active():
-    e = Member("Estefano", "Premium", True, ["Kick boxing"])
-    assert e.is_active
+@pytest.fixture
+def member():
+    return Member("Estefano", "Premium")
 
-def test_cancel_membership_deactivates_member():
-    m = Member("Morita", "Premium", False, ["Spinning"])
-    m.cancel_membership()
-    assert not m.is_active
+@pytest.fixture
+def second_member():
+    return Member("Morita", "Basic")
+
+def test_new_member_starts_active(member):
+    assert member.is_active
+    assert member.name == "Estefano"
+    assert member.plan == "Premium"
+
+def test_cancel_membership_deactivates_member(member):
+    member.cancel_membership()
+    assert not member.is_active
 
 
-def test_members_do_not_share_activities():
-    member1 = Member("Nicolas", "Premium", True)
-    member2 = Member("Kevin", "Premium", False)
-    member1.enrolled_activities.append( "Weight training")
-    assert member2.enrolled_activities == []
+def test_members_do_not_share_activities(member, second_member):
+    member.enrolled_activities.append("Weight training")
+    assert member.enrolled_activities == ["Weight training"]
+    assert second_member.enrolled_activities == []
