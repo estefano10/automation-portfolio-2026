@@ -1,0 +1,1 @@
+[{"test": "valid_login", "result": "pass"}, {"test": "invalid_login", "result": "fail"}, {"test": "checkout", "result": "pass"}, {"test": "performance_greater80%", "result": "pass"}]
