@@ -1,0 +1,5 @@
+test,result,duration
+valid_login,pass,1.2
+invalid_login,fail,0.8
+checkout,pass,3.5
+performance_greater80%,pass,2.5

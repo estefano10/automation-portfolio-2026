@@ -1,4 +1,5 @@
 import json
+import csv
 
 results = [
     {"test": "valid_login", "result": "pass"},
@@ -13,3 +14,13 @@ with open("results.json", mode="w") as f:
 with open("results.json") as f:
     data = json.load(f)
     print(data)
+
+with open("results.csv", newline="") as f:
+    data = csv.reader(f)
+    for x in data:
+         print(x)
+
+with open("results.csv", newline="") as f:
+    data = list(csv.DictReader(f))
+    for x in data:
+         print(x)
