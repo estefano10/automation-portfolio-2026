@@ -1,0 +1,8 @@
+test_name,status,duration,suite
+test_valid_login,pass,0.42,auth
+test_invalid_login,pass,0.35,auth
+test_locked_out_user,fail,0.28,auth
+test_add_to_cart,pass,0.51,cart
+test_checkout,fail,1.24,cart
+test_card_payment,fail,0.98,cart
+test_home_loads,pass,0.19,home
