@@ -1,10 +1,15 @@
 import csv
 from collections import Counter
 import json
+import argparse
 
 def main() -> None:
 
-    with open("results.csv", newline="", encoding="utf-8") as f:
+    parser = argparse.ArgumentParser(description="Generate a test report (total, pass rate, top failures) from a CSV of results.")
+    parser.add_argument("csv_file")
+    args = parser.parse_args()
+
+    with open(args.csv_file, newline="", encoding="utf-8") as f:
         reader = list(csv.DictReader(f))
 
     total = count_total(reader)
