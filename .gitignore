@@ -5,6 +5,7 @@ __pycache__/
 
 # archivo de pruebas, no es entregable
 module-1/week-03/gym/codewars.py
+module-1/exam-1/
 
 # C extensions
 *.so
@@ -219,3 +220,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Playwright
+node_modules/
+test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
