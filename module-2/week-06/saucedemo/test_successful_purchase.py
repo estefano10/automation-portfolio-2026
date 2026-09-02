@@ -1,23 +1,25 @@
 from playwright.sync_api import Page, expect
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
+from pages.checkout_page import CheckoutPage
 
 def test_complete_checkout(page: Page):
-    page.goto("https://www.saucedemo.com/")
-    page.get_by_placeholder("Username").fill("standard_user")
-    page.get_by_placeholder("Password").fill("secret_sauce")
-    page.get_by_role("button", name="Login").click()
+    login = LoginPage(page)
+    login.open()
+    login.login("standard_user", "secret_sauce")
     expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
-    page.locator("[data-test='add-to-cart-sauce-labs-backpack']").click()
-
-    page.locator("[data-test='shopping-cart-link']").click()
-
-    page.locator("[data-test='checkout']").click()
-
-    page.get_by_placeholder("First Name").fill("Estefano")
-    page.get_by_placeholder("Last Name").fill("Gigena")
-    page.get_by_placeholder("Zip/Postal Code").fill("5152")
-
-    page.locator("[data-test='continue']").click()
-    page.locator("[data-test='finish']").click()
-   
-    successful_message = page.locator("[data-test='complete-text']")
-    expect(successful_message).to_have_text("Your order has been dispatched, and will arrive just as fast as the pony can get there!")
+    inventory = InventoryPage(page)
+    inventory.add_backpack()
+    expect(inventory.cart_badge).to_have_text("1")
+    cart = CartPage(page)
+    cart.go_to_cart()
+    expect(page).to_have_url("https://www.saucedemo.com/cart.html")
+    expect(cart.total_price).to_have_text("$29.99")
+    cart.click_checkout()
+    expect(page).to_have_url("https://www.saucedemo.com/checkout-step-one.html")
+    checkout = CheckoutPage(page)
+    checkout.submit_information("Estefano", "Gigena", "5152")
+    expect(page).to_have_url("https://www.saucedemo.com/checkout-step-two.html")
+    checkout.finish_checkout()
+    expect(checkout.successful_message).to_have_text("Thank you for your order!")
