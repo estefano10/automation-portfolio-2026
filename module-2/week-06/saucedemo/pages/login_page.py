@@ -6,6 +6,7 @@ class LoginPage:
         self.username_box = page.get_by_placeholder("Username")
         self.password_box = page.get_by_placeholder("Password")
         self.login_button = page.get_by_role("button", name="Login")
+        self.error_container = page.locator("[data-test='error']")
 
     def open(self):
         self.page.goto("https://www.saucedemo.com/")
