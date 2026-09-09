@@ -7,7 +7,7 @@ class CheckoutPage:
         self.postal_code = page.get_by_placeholder("Zip/Postal Code")
         self.continue_button = page.locator("[data-test='continue']")
         self.finish_button = page.locator("[data-test='finish']")
-        self.successful_message = page.locator("[data-test='complete-header']")
+        self.success_message = page.locator("[data-test='complete-header']")
 
 
     def submit_information(self, first_name: str, last_name: str, postal_code: str):

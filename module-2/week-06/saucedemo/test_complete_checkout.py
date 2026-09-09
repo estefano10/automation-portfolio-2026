@@ -18,4 +18,4 @@ def test_complete_checkout(logged_in_page: Page):
     checkout.submit_information("Estefano", "Gigena", "5152")
     expect(logged_in_page).to_have_url("https://www.saucedemo.com/checkout-step-two.html")
     checkout.finish_checkout()
-    expect(checkout.successful_message).to_have_text("Thank you for your order!")
+    expect(checkout.success_message).to_have_text("Thank you for your order!")
