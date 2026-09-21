@@ -8,6 +8,8 @@ class LoginPage(BasePage):
         self.email_box = page.locator("[data-qa='login-email']")
         self.password_box = page.locator("[data-qa='login-password']")
         self.login_button = page.locator("[data-qa='login-button']")
+        self.error_message = page.get_by_text("Your email or password is incorrect!")
+
 
     def login(self, email: str, password: str):
         self.email_box.fill(email)
