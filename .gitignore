@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+#env
+.env
+
 # archivo de pruebas, no es entregable
 module-1/week-03/gym/codewars.py
 module-1/exam-1/
