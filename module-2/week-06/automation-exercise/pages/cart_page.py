@@ -7,3 +7,4 @@ class CartPage(BasePage):
         super().__init__(page)
         self.product_names = page.locator(".cart_description h4 a")
         self.checkout_button = page.locator(".check_out")
+        self.go_to_login_link = page.locator(".modal-body a[href='/login']")
