@@ -18,4 +18,3 @@ class CheckoutPage:
 
     def finish_checkout(self):
         self.finish_button.click()
-
