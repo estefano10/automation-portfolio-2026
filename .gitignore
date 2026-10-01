@@ -9,6 +9,7 @@ __pycache__/
 # archivo de pruebas, no es entregable
 module-1/week-03/gym/codewars.py
 module-1/exam-1/
+Claude outputs/
 
 # C extensions
 *.so
