@@ -31,12 +31,18 @@ This repository is my public lab: every week I ship something that runs.
 ### Page Object Model framework — Playwright + pytest
 `module-2/week-06/`
 
-Two independent projects built on the same clean POM architecture:
+Two end-to-end suites that also document my progression:
 
-- **`automation-exercise/`** — valid & invalid login, negative signup, product search, add single and multiple products to cart, and a full checkout flow.
-- **`saucedemo/`** — valid & invalid login, add to cart, complete checkout.
+- **`saucedemo/`** — a deliberately simpler, more repetitive first pass
+  (hardcoded URLs, no shared base class). Covers valid & invalid login,
+  add to cart, and complete checkout.
+- **`automation-exercise/`** — the refactored version: a shared `BasePage`
+  holds the base URL and navigation, each page declares its own `PATH` and
+  inherits from it. Covers valid & invalid login, negative signup, product
+  search, add single & multiple products to cart, and a full checkout flow.
 
-A shared `BasePage` holds the base URL and navigation; each page declares its own path and inherits from it.
+The contrast between the two is intentional — it shows the move from
+"make it work" to "make it clean."
 
 ### Real bug found & documented
 `module-2/week-06/automation-exercise/BUGS.md`
